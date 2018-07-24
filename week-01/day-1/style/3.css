@@ -1,0 +1,36 @@
+.north{
+    background-color: lightcoral;
+    height: 130px;
+    width: 300px;
+    color: white;
+    line-height: 130px;
+    text-align: center;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 15px 0 15px;
+}
+.south{
+    background-color: lightblue;
+    height: 130px;
+    width: 300px;
+    color: white;
+    line-height: 130px;
+    text-align: center;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 15px 0 15px;
+}
+.high{
+    height: 280px;
+    width: 330px;
+    background-color: blue;
+    margin: 0 0 5px 0;
+    padding-top:15px; 
+}
+.low{
+    height: 280px;
+    width: 330px;
+    background-color: blue;
+    margin: 0 0 5px 0;
+    padding-top:15px;
+}

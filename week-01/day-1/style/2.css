@@ -1,0 +1,38 @@
+div{
+    height: 120px;
+    width: 300px;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color:white;
+    vertical-align: middle;
+    line-height: 120px;
+    
+    
+}
+.big{
+    height: 510px;
+    width: 330px;
+    background-color: blue;
+    padding-top: 1px;
+}
+.north{
+    background-color: rgba(255 ,0 ,0 ,1);
+    margin:15px 15px 0 15px;
+    /*border-top: 15px solid blue;*/
+}
+
+.east{
+    background-color: rgba(255, 255, 0, 1);
+    margin:0 15px 0 15px;
+}
+
+.south{
+    background-color: rgba(142, 229, 238, 1);
+    margin:0 15px 0 15px;
+}
+
+.west{
+    background-color: rgba(176, 196, 222, 1);
+    margin:0 15px 15px 15px;
+}

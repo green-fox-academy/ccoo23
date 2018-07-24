@@ -1,0 +1,18 @@
+body{
+    background-color: aquamarine
+}
+img{
+    height:120px;
+}
+nav{
+    display: inline-block;
+    line-height: 120px;
+    border-style: dotted;
+}
+nav a{   /*nav中的a元素*/
+    color:blue;
+    text-decoration: none;
+    display: inline-block;
+    line-height:120px;
+
+}

@@ -1,0 +1,25 @@
+.ll{
+    color: blue;
+}
+
+.u1{
+    list-style-type: square;
+}
+
+.apple{
+    color: red;
+    list-style-type: disc;
+}
+.pm{
+    color: black;
+    list-style-type: disc;
+}
+h1{
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+    color: orange;
+    font-family: 'Times New Roman', Times, serif;
+}

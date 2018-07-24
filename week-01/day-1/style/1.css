@@ -1,0 +1,20 @@
+div{
+    background-color:darkcyan;
+    height: 120px;
+    width: 310px;
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    border:5px solid aquamarine;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    color: rgba(0, 0,0, .5);
+}
+
+.bd{
+   background-color: blueviolet; 
+}
+
+ol{
+    list-style: lower-greek;
+}

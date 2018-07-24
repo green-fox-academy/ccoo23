@@ -1,0 +1,9 @@
+div{
+    border-left:2px solid black;
+    line-height: auto;
+    padding-left: 10px;
+}
+
+p{
+    font-size: 18px;
+}
