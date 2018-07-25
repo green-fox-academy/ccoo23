@@ -1,14 +1,100 @@
 .a{
-    width: 800px;
+    width: 900px;
     height: 560px;
-    background-color: aliceblue;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1px;
+    margin-top: 20px; 
 }
 
 .b{
-
+    width: 350px;
+    height: 490px;
+    background-color: white;
+    float: left;
+    margin: 30px;
+    margin-left: 50px;
 }
-
+.add{
+    float: left;
+    width: 40px;
+    height: 50px;
+    background-color: white;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 220px;
+}
 .c{
-
+    float: right;
+    width: 350px;
+    height: 490px;
+    background-color: white;
+    margin: 30px;
 }
 body{background-color: darkgrey}
+
+input{
+    display: block;
+}
+
+.c input{
+    width: 230px;
+    height: 40px;
+    margin: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif    ;
+    font-size: 19px;
+    border: none;
+}
+.add input{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%
+    
+}
+.d{
+    margin-top: 160px;
+}
+.c1{
+    background-color: rgb(50, 50, 139);
+    color: white;
+}
+.c2{
+    color: white;
+    background-color: rgb(84, 127, 184)
+}
+.c3{
+    color: white;
+    background-color: rgb(245, 4, 56)
+}
+h1{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.b input:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: green;
+    outline: none;
+}
+
+input[type=text],input[type=password],input[type=email]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 250px;
+    height: 40px;
+}
+.b input{
+    margin: 20px;
+}
+input:focus{
+    outline: none;
+}
+.b input[type=button]{
+    width: 140px;
+    height: 50px;
+    color: white;
+    background-color: rgb(69, 212, 112)
+}

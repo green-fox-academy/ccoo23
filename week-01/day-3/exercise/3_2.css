@@ -2,6 +2,8 @@ label{
     display: inline-block;
     padding: 10px;
     font-size: 11px;
+    margin-left: auto;
+    margin-right: auto;
 }
 input{
     display: block;
@@ -39,6 +41,7 @@ input[type=text],input[type=password]{
 }
 .a:focus{
     border-color: green;
+    outline: none;
 }
 input[type=password]{
     display: inline;
@@ -47,7 +50,7 @@ img{
     width: 25px;
     height: 25px;
     position: absolute;
-    left: 360px;
+    left: 730px;
     top: 230px;
 
 }
