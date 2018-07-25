@@ -1,0 +1,12 @@
+table{
+    border: 3px dotted black;
+    border-collapse: collapse;
+    color: white;
+    background-color: tomato;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+th{
+    background-color: blanchedalmond;
+}
