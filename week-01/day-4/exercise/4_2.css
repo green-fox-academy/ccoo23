@@ -1,0 +1,14 @@
+.c1{
+  height: 300px;
+  width: 600px;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c2{
+  height: 80px;
+  width: 80px;
+  background-color: blueviolet;
+}

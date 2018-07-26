@@ -1,0 +1,23 @@
+.container{
+  width: 900px;
+  height: 200px;
+  display: flex;
+  flex-grow:1;
+  justify-content: start;
+}
+div{
+  height: 200px;
+  width: 200px;
+}
+.green{
+  display: flex;
+  background-color:green;
+}
+.yellow{
+  display: flex;
+  background-color: yellow;
+}
+.purple{
+  display: flex;
+  background-color: purple;
+}
