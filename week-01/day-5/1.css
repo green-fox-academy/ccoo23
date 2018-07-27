@@ -1,0 +1,55 @@
+div {
+  background-color: blue;
+  height: 440px;
+  width: 540px;
+  padding: 1px;
+}
+
+table {
+  border: 1px solid black;
+  height: 400px;
+  width: 500px;
+  background-color: aliceblue;
+  margin: 20px;
+  border-collapse: collapse;
+}
+
+tr, td, th {
+  border: 1px solid lightslategray;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+td, th {
+  color: grey;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgrey;
+}
+
+.l1::before {
+  content: "$50000";
+}
+
+.l2::before {
+  content: "$10000";
+}
+
+.l3::before {
+  content: "$85000";
+}
+
+.l4::before {
+  content: "$56000";
+}
+
+.l5::before {
+  content: "$98000";
+}

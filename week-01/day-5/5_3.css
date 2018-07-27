@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(160, 160, 226);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.blue {
+  box-shadow: 0 5px rgb(28, 28, 90);
+  flex-grow: 1;
+  background: linear-gradient(rgb(111, 111, 180) ,rgb(84, 84, 175)) ;
+}
+
+.green {
+  box-shadow: 0 5px rgb(0, 109, 0);
+  flex-grow: 1;
+  background: linear-gradient(rgb(97, 172, 97) ,rgb(20, 160, 20) );
+}
+
+.red {
+  background-color: rgb(250, 60, 60);
+  box-shadow: 0 5px rgb(160, 3, 3);
+  flex-grow: 1;
+  background: linear-gradient(rgb(250, 100, 60) ,rgb(250, 60, 60) );
+}
+
+button {
+  height: 60px;
+  width: 100px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button:hover {
+  filter: brightness(.9);
+}
+
+botton:active {
+  color: black;
+}
