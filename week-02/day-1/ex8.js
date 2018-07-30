@@ -1,0 +1,11 @@
+let a = 1;
+let b = 11;
+let c = 0;
+console.log("a = " + a);
+console.log("b = " + b);
+c = a;
+a = b;
+b = c;
+console.log("NOW");
+console.log("a = " + a);
+console.log("b = " + b);
