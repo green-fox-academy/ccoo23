@@ -6,9 +6,9 @@ const numbers = [1, 2, 3, 4, 5, 6, 9];
 // The output should be: "Noooooo"
 // Do this again with a different solution using different list functions!
 function check1(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] == "7") {
-            return "Hoorray";
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == "7") {
+      return "Hoorray";
         }
     }
     return "nooooo";
