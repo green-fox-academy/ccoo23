@@ -2,6 +2,8 @@ const canvas = document.querySelector('.main-canvas');
 const ctx = canvas.getContext('2d');
 ctx.strokeStyle = 'black';
 ctx.strokeRect(0, 0, 600, 600);
+
+
 var topX = 600;
 var rightY = 600;
 for(let i = 1; i<= 20; i++){
@@ -18,6 +20,9 @@ for(let i = 1; i<= 20; i++){
     ctx.lineTo(600 - (i-1)*30, 600);
     ctx.stroke();
   }
+
+//*********************************************************************************************** */
+
 // ctx.strokeStyle = 'black';
 // ctx.strokeRect(0, 0, 600, 600);
 // ctx.strokeStyle = 'violet';
@@ -36,8 +41,21 @@ for(let i = 1; i<= 20; i++){
 // var rads = 0;
 
 // for(let i = 1; i< 16; i++){
+//   ctx.strokeStyle = 'violet';
 //   ctx.beginPath();
 //   ctx.moveTo(600, 600 - 40 * i);
-//   ctx.lineTo(600 * Math.cos(Math.PI/15 * i) , 600 - (600 * Math.sin(Math.PI/15 * i) ) );
+//   ctx.lineTo(600 * Math.cos(Math.PI/30 * i) , 600 - (600 * Math.sin(Math.PI/30 * i) ) );
+//   ctx.moveTo(600 - 40*i, 0);
+//   ctx.lineTo(600 * Math.cos(Math.PI/30 * i) , 600 - (600 * Math.sin(Math.PI/30 * i) ) );
 //   ctx.stroke();
 // }
+
+// for(let i = 1; i< 16; i++){
+//     ctx.strokeStyle = 'green';
+//     ctx.beginPath();
+//     ctx.moveTo(0, 600 - 40 * i);
+//     ctx.lineTo(600 - (600 * Math.sin(Math.PI/30 * i) ) , 600 * Math.cos(Math.PI/30 * i) );
+//     ctx.moveTo(600 - 40*i, 600);
+//     ctx.lineTo(600 - (600 * Math.sin(Math.PI/30 * i) ) , 600 * Math.cos(Math.PI/30 * i) );
+//     ctx.stroke();
+//   }
