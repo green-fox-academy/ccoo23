@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Droid</title>
+<style type="text/css">
+select {
+    width: 100px;
+    height: 200px;
+}
+</style>
+<script type="text/javascript">
+    var move = function (obj)
+    {
+        var sel1 = document.getElementById ('sel1');
+        var sel2 = document.getElementById ('sel2');
+        if (obj.value == '>>')
+        {
+            for ( var i = 0; i < sel1.children.length; i++)
+            {
+                var x = sel1.children[i];
+                if (x.selected)
+                {
+                    sel2.appendChild (x);
+                    i = -1;
+                    continue;
+                }
+            }
+        }
+        else if (obj.value == '<<')
+        {
+            for ( var i = 0; i < sel2.children.length; i++)
+            {
+                var x = sel2.children[i];
+                if (x.selected)
+                {
+                    sel1.appendChild (x);
+                    i = -1;
+                    continue;
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td rowspan="2"><select multiple="multiple" id="sel1">
+                    <option>111a</option>
+                    <option>111c</option>
+                    <option>111d</option>
+                    <option>111f</option>
+                    <option>111s</option>
+                    <option>111h</option>
+                    <option>111g</option>
+            </select>
+            </td>
+            <td><table>
+                    <tr>
+                        <td><input type="button" value=">>" onclick="move(this);" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="<<" onclick="move(this);" /></td>
+                    </tr>
+                </table></td>
+            <td><select multiple="multiple" id="sel2">
+                    <option>111</option>
+                    <option>111</option>
+                    <option>111</option>
+                    <option>111</option>
+                    <option>111</option>
+                    <option>111</option>
+                    <option>111</option>
+            </select>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
