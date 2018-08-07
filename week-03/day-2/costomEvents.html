@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom events</title>
+</head>
+<body>
+  <!-- 
+    In JavaScript you can define your own custom events. Try it!
+    In the main.js you can see that if the left-side-click event is dispatched on the div then it will change its background-color.
+    Also if the right-side-click is dispatched the background will change again.
+    Define these two events.
+     - If the div's left side (0-200px) is clicked then dipatch the proper event 
+     - If the div's right side (200px-400px) is clicked then dipatch the proper event 
+     - Work in the provided main.js file.
+   -->
+  <div></div>
+  <script>
+      const div = document.getElementsByTagName("div");
+      div[0].style.height = "1000px";
+      div[0].style.width = "400px";
+      div[0].style.backgroundColor = 'violet';
+      div[0].style.margin = 0
+      div[0].addEventListener("click", (e) => {
+          let x = window.event.screenX;
+          let y = window.event.screenY;
+          console.log(x);
+          if(y> 1000)
+          if(x< 200){
+            div[0].style.backgroundColor = 'green';
+          }else if(x> 200 && x<400){
+            div[0].style.backgroundColor = 'yellow';
+          }
+      });
+  </script>
+</body>
+</html>
