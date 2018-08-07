@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>3times</title>
+    <style>
+        button{
+            width: 200px;
+            height: 180px;
+            font-size: 30px;
+            margin:200px 0 0 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn"></button>
+    <script>
+        const btn = document.getElementById('btn');
+        var count = 0;
+        setTimeout(() => {
+            btn.addEventListener("click", (e) => {
+                ++count;
+                if(count > 2){
+                    btn.textContent = "5 seconds elapsed and clicked 3 times";
+                }
+            });
+        }, 5000);
+    </script>
+</body>
+</html>
