@@ -36,6 +36,95 @@
     <div class="img-inspector">
     </div>
 
+    <script>
+      const btns = document.getElementsByTagName("button");
+      const image = document.getElementsByClassName("img-inspector");
+      const nav = document.getElementsByTagName("nav");
+      console.log(getComputedStyle(image[0], false)["width"]);   //get attributes from css
+      
+      image[0].style.position = "relative";
+      image[0].style.left = 0;
+      image[0].style.right = 0;
+      image[0].style.top = 0;
+      image[0].style.bottom = 0;
+      const up = btns[0];
+      const Down = btns[1];
+      const Left = btns[2];
+      const Right = btns[3];
+      const ZoomIn = btns[4];
+      const ZoomOut = btns[5];
+
+      nav[0].addEventListener("click", (e) => {
+          console.log(e.target.innerText);
+          if(e.target.innerText == "Up"){
+            let y = image[0].style.top;
+            console.log(parseInt(y));
+            image[0].style.top = (parseInt(y) - 10) + "px";
+          }
+          if(e.target.innerText == "Down"){
+            let y = image[0].style.top;
+            console.log(parseInt(y));
+            image[0].style.top = (parseInt(y) + 10) + "px";
+          }
+          if(e.target.innerText == "Left"){
+            let x = image[0].style.left;
+            console.log(parseInt(x));
+            image[0].style.left = (parseInt(x) - 10) + "px";
+          }
+          if(e.target.innerText == "Right"){
+            let x = image[0].style.left;
+            console.log(parseInt(x));
+            image[0].style.left = (parseInt(x) + 10) + "px";
+          }
+          if(e.target.innerText == "Zoom in"){
+            let w = getComputedStyle(image[0], false)["width"];
+            let h = getComputedStyle(image[0], false)["height"];
+            // console.log(w);
+            image[0].style.width = parseInt(w)*0.9 + "px";
+            image[0].style.height = parseInt(h)*0.9 + "px";
+          }
+          if(e.target.innerText == "Zoom out"){
+            let w = getComputedStyle(image[0], false)["width"];
+            let h = getComputedStyle(image[0], false)["height"];
+            image[0].style.width = parseInt(w) * 1.1 + "px";
+            image[0].style.height = parseInt(h) * 1.1 + "px";
+          }
+      });
+
+    //   up.addEventListener("click", (e) =>{
+    //     let y = image[0].style.top;
+    //      console.log(parseInt(y));
+    //      image[0].style.top = (parseInt(y) - 10) + "px";
+    //   });
+    //   Down.addEventListener("click", (e) =>{
+    //     let y = image[0].style.top;
+    //      console.log(parseInt(y));
+    //      image[0].style.top = (parseInt(y) + 10) + "px";
+    //   });
+    //   Left.addEventListener("click", (e) =>{
+    //     let x = image[0].style.left;
+    //      console.log(parseInt(x));
+    //      image[0].style.left = (parseInt(x) - 10) + "px";
+    //   });
+    //   Right.addEventListener("click", (e) =>{
+    //     let x = image[0].style.left;
+    //      console.log(parseInt(x));
+    //      image[0].style.left = (parseInt(x) + 10) + "px";
+    //   });
+    //   ZoomIn.addEventListener("click", (e) =>{
+    //     let w = getComputedStyle(image[0], false)["width"];
+    //     let h = getComputedStyle(image[0], false)["height"];
+    //     // console.log(w);
+    //     image[0].style.width = parseInt(w)*0.9 + "px";
+    //     image[0].style.height = parseInt(h)*0.9 + "px";
+    //   });
+    //   ZoomOut.addEventListener("click", (e) =>{
+    //     let w = getComputedStyle(image[0], false)["width"];
+    //     let h = getComputedStyle(image[0], false)["height"];
+    //     image[0].style.width = parseInt(w) * 1.1 + "px";
+    //     image[0].style.height = parseInt(h) * 1.1 + "px";
+    //   });
+    </script>
     <!-- You can work in the html or in a separate js file. Like:
     <script>
       Here is an image inspector, but the buttons are not implemented yet, that will

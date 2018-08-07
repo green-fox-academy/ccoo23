@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>delayed-Click</title>
+    <style>
+        button{
+            width: 200px;
+            height: 110px;
+            font-size: 30px;
+            margin:200px 0 0 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="b"></button>
+    <script>
+        const btn = document.getElementById('b');
+        btn.addEventListener("click", listen = (e) => {
+            setTimeout(() => {
+                btn.textContent = "2 seconds ellapsed";
+            }, 2000);
+            removeEventListener("click", listen);
+        });
+    </script>
+</body>
+</html>
