@@ -20,6 +20,10 @@
     document.querySelector('div').addEventListener('click', (event) => {
       event.target.innerText = 'Yeah, click event is fired!';
     });
+    const btn = document.getElementsByTagName("button");
+      btn[0].addEventListener('click', (e) => {
+        document.querySelector('div').click();
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>scroll</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="scroll.css" />
+</head>
+<body>
+    <div></div>
+    
+    
+    <script>
+      const body = document.getElementsByTagName("body");
+      var divs = document.getElementsByTagName("div");
+      function getColor(){
+        var r = Math.ceil(Math.random()*255);
+        var g = Math.ceil(Math.random()*255);
+        var b = Math.ceil(Math.random()*255);
+        console.log('rgb(' + r + ',' + g + ',' + b + ')');
+        return 'rgb(' + r + ',' + g + ',' + b + ')';
+      }
+      divs[0].style.backgroundColor = getColor();
+      
+     function loadMore(){
+         for(let i = 0; i<10; i++){
+             var newDiv = document.createElement('div');
+             newDiv.style.backgroundColor = getColor();
+             body[0].appendChild(newDiv);
+         }
+     }
+
+      
+      
+     loadMore();
+     loadMore();
+    //   body[0].addEventListener('scroll', function() {
+    //     if (body[0].scrollTop + body[0].clientHeight >= body[0].scrollHeight) {
+           
+    //       var t  = document.body.scrollTop;
+    //       console.log(t);
+    //       loadMore();
+    //     }
+    //   });
+      
+    window.addEventListener("scroll",function(e){
+      //var t =document.documentElement.scrollTop||document.body.scrollTop;
+      //console.log(t)
+
+    if (body[0].scrollTop + body[0].clientHeight >= body[0].scrollHeight) {
+           
+           //var t  = document.body.scrollTop;
+           //console.log(t);
+           loadMore();
+         }
+    });
+    </script>
+</body>
+</html>
