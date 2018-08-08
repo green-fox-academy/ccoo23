@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>reproduce1</title>
+    <style>
+      .main-canvas {
+        margin: 20px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="600" class="main-canvas"></canvas>
+    <script>
+        const canvas = document.querySelector('.main-canvas');
+        const ctx = canvas.getContext('2d');
+        var counter = 1;
+        function reproduce(start, end, y, counter){
+            console.log("counter" + counter);
+            // console.log("start" + start);
+            // console.log("end" + end);
+            if(counter < 6){
+              var width = end - start;
+              ctx.strokeRect(width/3 + start, y, width/3, width/3);
+              ctx.strokeRect(0 + start, y + width/3, width/3, width/3);
+              ctx.strokeRect(width/3 + start, y + width/3*2, width/3, width/3);
+              ctx.strokeRect(width/3*2 + start, y + width/3, width/3, width/3);
+            //   console.log("width" + width);
+              
+              var time = ++counter;   //fking genius
+              
+              reproduce(width/3 + start, start + width/3*2, y + 0, time);
+              reproduce(start, start + width/3, y + width/3,  time);
+               reproduce(width/3 + start, start + width/3*2, y + width/3*2 , time);
+               reproduce(width/3*2 + start, end, y + width/3 , time);
+            }
+            
+            // reproduce(width/3 + start, 0, ++count);
+            // reproduce(width/3 + start, 0, ++count);
+            // reproduce(width/3 + start, 0, ++count);
+        }
+
+        reproduce(0, 600, 0, 1);
+    </script>
+  </body>
+</html>
