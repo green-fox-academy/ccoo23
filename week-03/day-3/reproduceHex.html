@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>reproduce1</title>
+    <style>
+      .main-canvas {
+        margin: 20px;
+        border: 1px solid black;
+        /* background-color: aqua; */
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="800" class="main-canvas"></canvas>
+    <script>
+        const canvas = document.querySelector('.main-canvas');
+        const ctx = canvas.getContext('2d');
+        //canvas.style.backgroundColor = "aqua";
+        var counter = 1;
+        function drawHex(startX, y, width, counter) {
+            if(counter<6){
+              ctx.beginPath();
+              ctx.moveTo(startX + width/2, y);
+              ctx.lineTo(startX + width*1.5, y);
+              ctx.lineTo(startX + width*2, y + Math.sqrt(3)*width/2);
+              ctx.lineTo(startX + width*1.5, y + Math.sqrt(3)*width);
+              ctx.lineTo(startX + width/2, y + Math.sqrt(3)*width);
+              ctx.lineTo(startX, y + Math.sqrt(3)*width/2);
+              ctx.lineTo(startX + width/2, y);
+              ctx.stroke();
+              var time = ++counter;
+              drawHex(startX + width/4, y, width/2, time);
+              drawHex(startX + width, y + Math.sqrt(3)/4*width, width/2, time);
+              drawHex(startX + width/4, y + Math.sqrt(3)/2*width, width/2, time);
+              
+            }
+        }
+
+        drawHex(0, 0, 300, 1);
+    </script>
+  </body>
+</html>
