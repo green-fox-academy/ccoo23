@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>gif</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+
+    <div class="gif"></div>
+
+    <script>
+        const gifContainer = document.querySelector('div');
+        const ajax = (method, url, callback) => {
+            const httpRequest = new XMLHttpRequest();
+            httpRequest.onload = () => {
+                const responseObject = JSON.parse(httpRequest.response);
+                console.log(responseObject);
+                callback(responseObject);
+            };
+            httpRequest.open(method, url);
+            httpRequest.send();
+        };
+        const gifRenderer = (response) => {
+            console.log(response);
+            let counter = 0;
+            response.data.forEach((data) => {
+                const newImages = document.createElement('img');
+                newImages.src = data.images.downsized.url;
+                newImages.innerHTML = counter;
+                counter += 1;
+                gifContainer.appendChild(newImages);
+            });
+        };
+        ajax('GET', 'https://api.giphy.com/v1/gifs/search?api_key=G4O60kJjM1jsreB4mHKlhK88XIJHoXJV&q=staticthumbnail&limit=25&offset=0&rating=G&lang=en', gifRenderer);
+    </script>
+</body>
+
+</html>

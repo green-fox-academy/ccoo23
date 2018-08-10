@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>StarWars</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="StarWars.css" />
+</head>
+
+<body>
+    <div id="container">
+        <div id="head">
+            <label>Enter Charactor Name</label>
+            <input type="text" name="inputContent" class="text">
+            <input type="button" value="search" class="button">
+        </div>
+        <div id="left">
+            <ul id="list">
+                <li>NAMES</li>
+            </ul>
+        </div>
+
+        <div id="right">
+            <ul id="list2">
+            </ul>
+        </div>
+        <label>click to list movies</label>
+    </div>
+
+    <script>
+        var url = "https://swapi.co/api/";
+        const input = document.getElementsByClassName("text");
+        const list1 = document.getElementById('list');
+        const list2 = document.getElementById('list2');
+
+        const btn = document.getElementsByClassName("button");
+        btn[0].addEventListener("click", (e) => {
+            while (list1.hasChildNodes()) //当div下还存在子节点时 循环继续
+            {
+                list1.removeChild(list1.firstChild);
+            }
+            var text = input[0].value;
+            ajax('GET', 'https://swapi.co/api/people/?search=' + text, console.log);
+            //  console.log(console.log(resultArray[0].films[0]));
+        });
+
+        function addList(arr, num) {
+            while (list2.hasChildNodes()) //当div下还存在子节点时 循环继续
+            {
+                list2.removeChild(list2.firstChild);
+            }
+            let filmArray = arr[num].films;
+
+            for (let i = 0; i < filmArray.length; i++) {
+                let listElement = document.createElement('li');
+                listElement.style.width = "290px";
+                listElement.style.overflow = "hidden";
+                listElement.innerText = filmArray[i];
+                list2.appendChild(listElement);
+            }
+        }
+        const ajax = (method, url, callback, payload = null) => {
+            const httpRequest = new XMLHttpRequest();
+            httpRequest.open(method, url);
+            httpRequest.onload = () => {
+                const responseData = JSON.parse(httpRequest.responseText);
+                callback(responseData);
+                for (var key in responseData) {
+                    var listValue = key + " : " + responseData[key];
+                    if (key == 'results') {
+                        const resultArray = responseData[key];
+                        console.log(resultArray);
+                        console.log(resultArray[0].name);
+                        console.log(resultArray[0].films[0]);
+
+                        for (let i = 0; i < resultArray.length; i++) {
+                            let listElement = document.createElement('li');
+                            listElement.style.width = "290px";
+                            listElement.style.overflow = "hidden";
+                            listElement.innerText = resultArray[i].name;
+                            list1.appendChild(listElement);
+                            listElement.addEventListener('click', (e) => {
+                                addList(resultArray, i);
+                                console.log(i);
+
+                            });
+
+                        }
+                    }
+                    //let listElement = document.createElement('li');    
+                    // listElement.style.width = "290px";
+                    // listElement.style.overflow = "hidden";
+                    // listElement.innerText = listValue;
+                    // list1.appendChild(listElement);
+                }
+
+            };
+
+
+            httpRequest.setRequestHeader('Content-Type', 'application/json');
+            httpRequest.send(JSON.stringify(payload));
+        };
+
+
+
+        // const colorRenderer = (response) => {
+        //     clearDomElement(colorContainer);
+        //     response.colors.forEach((color) => {
+        //         const colorElement = document.createElement('p'); // eslint-disable-line
+        //         colorElement.innerText = color;
+        //         colorContainer.appendChild(colorElement);
+        //     });
+        // };
+
+        // let httpRequest = new XMLHttpRequest();
+        // httpRequest.onreadystatechange = console.log;
+        // httpRequest.open('GET', 'https://sheetsu.com/apis/v1.0/7654fbe24554', true); // Also try http://444.hu/feed
+        // httpRequest.send(null);
+    </script>
+</body>
+
+</html>

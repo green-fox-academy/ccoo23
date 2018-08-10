@@ -1,0 +1,35 @@
+label{
+    display: block;
+    margin-left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50px;
+    width: auto;
+    padding: 20px;
+}
+.button{
+  border-radius: 20%;
+  background-color: transparent;
+}
+.text{
+    margin-left: 100px;
+}
+#left{
+  height: auto;
+  width: 350px;
+  display: inline-block;
+  background-color: aqua;
+}
+#right{
+    height: auto;
+    width: 350px;
+    display: inline-block;
+    background-color: blanchedalmond;
+}
+
+list{
+    max-width: 290px;
+    text-overflow : ellipsis; 
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
