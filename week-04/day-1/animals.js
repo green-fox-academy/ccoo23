@@ -18,7 +18,6 @@ function Farm(number) {
   this.Animals = [];
   for (let i = 0; i < number; i++) {
     const tempObj = new Animals();
-    // console.log(tempObj);
     this.Animals[i] = tempObj;
   }
   this.breed = function breed() {
@@ -26,21 +25,16 @@ function Farm(number) {
     this.Animals[this.Animals.length] = tempObj2;
   };
   this.slaughter = function slaughter() {
-    console.log('works 3');
-    console.log('animallength' + this.Animals.length);
     let index = 0;
     let tmp = 0;
     tmp = this.Animals[0].hunger + this.Animals[0].thirst;
-    console.log(tmp);
     for (let i = 1; i < this.Animals.length; i++) {
       if ((this.Animals[i].hunger + this.Animals[i].thirst) > tmp) {
         tmp = this.Animals[i].hunger + this.Animals[i].thirst;
         index = i;
       }
-    }
-    console.log('works after loop');
-    
-    // this.Animals.splice(index, 1);
+    }    
+    this.Animals.splice(index, 1);
   };
 }
 function isChosen() {
@@ -59,8 +53,7 @@ function print(object) {
   }
 }
 function progress(obj) {
-  for (let i = 0; i < 20; i++) {
-    console.log('works');
+  for (let i = 0; i < obj.Animals.length; i++) {
     if (isChosen()) {
       obj.Animals[i].play();
     }
@@ -72,22 +65,18 @@ function progress(obj) {
     }
   }
   if (obj.slots < 20) {
-    console.log('works 2');
     obj.slots.breed();
   }
   obj.slaughter();
-  console.log(obj);
+  console.log(obj.Animals);
   print(obj);
 }
 // Create a sheep farm with 20 slots
 const SheepFarm = new Farm(20);
-console.log(SheepFarm);
 console.log(SheepFarm.Animals); // Should log 20 Animal objects
 
 const button = document.querySelector('button');
-console.log(button);
 button.addEventListener('click', () => {
-  console.log('s');
   progress(SheepFarm);
 });
 // Add a click event to the button and call 'progress'
