@@ -4,7 +4,7 @@ function getRandomInt() {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 function Bank() {
-  var history = [];
+  let history = [];
   let balance = 0;
   let pinCode = '0000';
   const accountNumber = Math.floor(Math.random() * 89999 + 10000);
@@ -43,8 +43,7 @@ function Bank() {
         if (moneyYouTake < balance) {
           balance -= moneyYouTake;
           history.push(`deposit ${moneyYouTake} to ${accountNumber}`);
-        }
-        else {
+        } else {
           balance = 0;
           try {
             throw error = new Error('you dont have enough money');
@@ -57,9 +56,9 @@ function Bank() {
       return false;
     }
   };
-  this.getPin = () => { return pinCode; };
-  this.getBalance = () => { return balance; };
-  this.getHistory = () => {return history; };
+  this.getPin = () => pinCode;
+  this.getBalance = () => balance;
+  this.getHistory = () => history;
 }
 const bank = new Bank();
 bank.initializePin();
