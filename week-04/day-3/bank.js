@@ -15,7 +15,7 @@ function Bank() {
     return pinCode;
   };
   this.regeneratePin = (currentPin, newPin) => {
-    var error;
+    let error;
     try {
       if (currentPin === pinCode) {
         pinCode = newPin;
@@ -37,7 +37,7 @@ function Bank() {
     }
   };
   this.withdrawer = (inputCode) => {
-    var error;
+    let error;
     if (inputCode === pinCode) {
       return function withdraw(moneyYouTake) {
         if (moneyYouTake < balance) {
