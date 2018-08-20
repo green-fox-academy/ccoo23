@@ -1,27 +1,18 @@
 const btn = document.querySelector('button');    //eslint-disable-line
 const paragraph = document.querySelector('p');   //eslint-disable-line
-
+function view(text) {
+  paragraph.innerText = text;
+}
 btn.addEventListener('click', () => {
   fetch('http://api.icndb.com/jokes/random')
-    .then(function (response) {
-      return response.json();
-    }, function (error) {
+    .then((response) => { response.json(); }, (error) => {
       console.log(error);
     })
-    .then(function (myJson) {
+    .then((myJson) => {
       console.log(myJson.value.joke);
       view(myJson.value.joke);
     });
 });
-function view(text) {
-  paragraph.innerText = text;
-}
-
-
-
-
-
-
 
 
 // function ajax(url, method) {

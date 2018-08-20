@@ -5,9 +5,8 @@
 
 function A(a) {
   this.varA = a;
-  return varA;
 }
-
+const x = new A('a');
 // 以上函数 A 的定义中，既然 A.prototype.varA 总是会被 this.varA 遮蔽，
 // 那么将 varA 加入到原型（prototype）中的目的是什么？
 A.prototype = {
@@ -19,4 +18,4 @@ A.prototype = {
   如果varA并不是在每个实例中都被初始化，那这样做将是有效果的。
   */
 }
-console.log(A(a));
+console.log(x);
