@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+
+form {
+  height: 70%;
+  width: 70%;
+  margin-top: 160px;
+}
+
+input {
+  margin: 0 5px 15px 5px;
+  background-color: limegreen;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #333;
+}
+
+.getText {
+  height: 40px;
+  width: 95px;
+}
+
+.submit {
+  height: 40px;
+  width: 120px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  height: auto;
+}
