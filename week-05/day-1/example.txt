@@ -1,0 +1,24 @@
+a = require(url)
+module.exports = (函数 变量 对象等)
+
+a.函数() 可以使用
+ npm可以导包
+
+npm i 
+
+create-react-app
+public    pirvate相册
+
+registerServiceWorker()
+import AAA from './sss.jpg'
+import 'xxx/sss'
+class a extends b{
+  render() {
+    return........
+  }
+}
+const Button = () => {
+  return(
+    <button> aaaaaaaaaaaaaaa </button>
+  );  
+}
