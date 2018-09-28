@@ -2,9 +2,10 @@
 //  returns the sum of each rows as an array
 function sumArr(arr) {
   let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
+  arr.map((e) => {
+    sum += e;
+    return sum;
+  });
   return sum;
 }
 const matrix = [
@@ -13,11 +14,11 @@ const matrix = [
   [7, 8, 9],
 ];
 const results = [];
-function sumRow(list) {
-  list.map((e, i) => {
-    results[i] = sumArr(e);
-    return results;
-  });
-}
+const sumRow = (list) => {
+  results.push(list.map((e) => {
+    const result = sumArr(e);
+    return result;
+  }));
+};
 sumRow(matrix);
 console.log(results);
